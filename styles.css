@@ -1,34 +1,53 @@
-/* General Reset */
+/* Import Whitney Font */
+@import url('https://cdn.jsdelivr.net/npm/@discord/fonts@latest/whitney.css');
+
+/* Root Variables for Discord-Like Colors */
+:root {
+    --background-primary: #36393f;
+    --background-secondary: #2f3136;
+    --background-tertiary: #202225;
+    --background-accent: #4f545c;
+    --text-normal: #dcddde;
+    --text-muted: #72767d;
+    --text-link: #00b0f4;
+    --header-primary: #fff;
+    --header-secondary: #b9bbbe;
+    --border-radius: 8px;
+}
+
+/* Global Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Whitney, Helvetica Neue, Helvetica, Arial, sans-serif;
+    text-rendering: optimizeLegibility;
 }
 
 /* Body */
 body {
+    background-color: var(--background-primary);
+    color: var(--text-normal);
     display: flex;
     height: 100vh;
-    background-color: #0d1117; /* GitHub dark background */
-    color: #c9d1d9;
+    overflow: hidden;
 }
 
 /* Sidebar */
 .sidebar {
     width: 250px;
-    background: #161b22; /* GitHub sidebar color */
-    padding-top: 20px;
     height: 100vh;
+    background: var(--background-secondary);
+    padding-top: 20px;
     position: fixed;
     left: 0;
     top: 0;
-    border-right: 1px solid #30363d;
+    border-right: 1px solid var(--background-accent);
 }
 
 .sidebar h2 {
     text-align: center;
-    color: #58a6ff; /* GitHub blue */
+    color: var(--text-link);
     font-size: 20px;
     margin-bottom: 20px;
 }
@@ -40,20 +59,19 @@ body {
 
 .sidebar ul li {
     padding: 12px 20px;
-    text-align: left;
 }
 
 .sidebar ul li a {
     text-decoration: none;
-    color: #c9d1d9;
+    color: var(--text-normal);
     font-weight: 600;
     display: block;
     transition: background 0.2s;
 }
 
 .sidebar ul li a:hover {
-    background: #21262d; /* GitHub hover effect */
-    border-radius: 5px;
+    background: var(--background-tertiary);
+    border-radius: var(--border-radius);
 }
 
 /* Main Content */
@@ -62,14 +80,14 @@ body {
     padding: 20px;
     flex-grow: 1;
     overflow-y: auto;
-    max-width: 900px;
-    margin: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Headers */
 h1, h2 {
     font-size: 24px;
-    color: #58a6ff; /* GitHub title color */
+    color: var(--header-primary);
     margin-bottom: 16px;
 }
 
@@ -77,15 +95,14 @@ h1, h2 {
 .members-list, .allies-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: left;
-    gap: 10px;
+    gap: 15px;
 }
 
 .member, .ally {
-    background: #161b22;
+    background: var(--background-secondary);
     padding: 10px;
-    border: 1px solid #30363d;
-    border-radius: 6px;
+    border: 1px solid var(--background-accent);
+    border-radius: var(--border-radius);
     text-align: center;
     width: 180px;
 }
@@ -93,36 +110,47 @@ h1, h2 {
 .member img, .ally img {
     width: 100%;
     height: auto;
-    border-radius: 6px;
-    border: 1px solid #30363d;
+    border-radius: var(--border-radius);
 }
 
 .member-name, .ally-name {
     margin-top: 8px;
     font-size: 16px;
-    color: #e6edf3;
+    color: var(--header-secondary);
 }
 
-/* Links */
-a {
-    color: #58a6ff;
+/* Discord Link Button */
+.discord-link {
+    display: block;
+    background: var(--text-link);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: var(--border-radius);
     text-decoration: none;
+    font-weight: bold;
+    transition: background 0.2s;
 }
 
-a:hover {
-    text-decoration: underline;
+.discord-link:hover {
+    background: #0088cc;
 }
 
-/* Code Blocks (for markdown-like feel) */
-code {
-    background: #161b22;
-    padding: 2px 6px;
-    border-radius: 6px;
-    color: #c9d1d9;
-    font-family: Consolas, 'Courier New', monospace;
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
 }
 
-/* Mobile Responsiveness */
+::-webkit-scrollbar-track {
+    background: var(--background-tertiary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--background-accent);
+    border-radius: var(--border-radius);
+}
+
+/* Responsive Design */
 @media screen and (max-width: 768px) {
     .sidebar {
         width: 100%;
