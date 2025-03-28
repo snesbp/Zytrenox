@@ -1,55 +1,48 @@
-/* Import Whitney Font */
-@import url('https://cdn.jsdelivr.net/npm/@discord/fonts@latest/whitney.css');
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@300;400;700&family=Righteous&display=swap');
 
-/* Root Variables for Discord-Like Colors */
+/* Theme Variables */
 :root {
     --background-primary: #36393f;
     --background-secondary: #2f3136;
     --background-tertiary: #202225;
-    --background-accent: #4f545c;
+    --background-floating: rgba(17, 17, 17, 0.9);
+    --background-accent: #0099ff;
     --text-normal: #dcddde;
     --text-muted: #72767d;
     --text-link: #00b0f4;
-    --header-primary: #fff;
-    --header-secondary: #b9bbbe;
-    --border-radius: 8px;
+    --interactive-active: #0099ff;
+    --interactive-hover: rgba(0, 0, 0, 0.534);
+    --border-radius: 10px;
+    --font-ui: 'Poppins', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+    --font-header: 'Righteous', sans-serif;
 }
 
-/* Global Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Whitney, Helvetica Neue, Helvetica, Arial, sans-serif;
-    text-rendering: optimizeLegibility;
-}
-
-/* Body */
+/* Apply Discord-Like Dark Theme */
 body {
     background-color: var(--background-primary);
     color: var(--text-normal);
+    font-family: var(--font-body);
+    margin: 0;
+    padding: 0;
     display: flex;
     height: 100vh;
-    overflow: hidden;
 }
 
 /* Sidebar */
 .sidebar {
     width: 250px;
-    height: 100vh;
-    background: var(--background-secondary);
-    padding-top: 20px;
-    position: fixed;
-    left: 0;
-    top: 0;
-    border-right: 1px solid var(--background-accent);
+    background-color: var(--background-secondary);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
 }
 
 .sidebar h2 {
-    text-align: center;
+    font-family: var(--font-header);
     color: var(--text-link);
-    font-size: 20px;
-    margin-bottom: 20px;
+    text-align: center;
 }
 
 .sidebar ul {
@@ -58,112 +51,76 @@ body {
 }
 
 .sidebar ul li {
-    padding: 12px 20px;
+    margin: 10px 0;
 }
 
 .sidebar ul li a {
     text-decoration: none;
     color: var(--text-normal);
-    font-weight: 600;
+    font-size: 16px;
+    padding: 10px;
     display: block;
-    transition: background 0.2s;
+    border-radius: var(--border-radius);
+    transition: background 0.3s;
 }
 
 .sidebar ul li a:hover {
-    background: var(--background-tertiary);
-    border-radius: var(--border-radius);
+    background-color: var(--interactive-hover);
 }
 
 /* Main Content */
 .content {
-    margin-left: 250px;
+    flex: 1;
     padding: 20px;
-    flex-grow: 1;
     overflow-y: auto;
-    display: flex;
-    flex-direction: column;
 }
 
-/* Headers */
-h1, h2 {
-    font-size: 24px;
-    color: var(--header-primary);
-    margin-bottom: 16px;
-}
-
-/* Members & Allies */
-.members-list, .allies-list {
+/* Members List */
+.members-list {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
 }
 
-.member, .ally {
-    background: var(--background-secondary);
-    padding: 10px;
-    border: 1px solid var(--background-accent);
+.member {
+    background-color: var(--background-secondary);
     border-radius: var(--border-radius);
+    padding: 15px;
     text-align: center;
-    width: 180px;
+    width: 200px;
 }
 
-.member img, .ally img {
+.member img {
     width: 100%;
-    height: auto;
     border-radius: var(--border-radius);
 }
 
-.member-name, .ally-name {
-    margin-top: 8px;
-    font-size: 16px;
-    color: var(--header-secondary);
-}
-
-/* Discord Link Button */
-.discord-link {
-    display: block;
-    background: var(--text-link);
-    color: white;
-    text-align: center;
-    padding: 10px;
-    border-radius: var(--border-radius);
-    text-decoration: none;
+.member-name {
     font-weight: bold;
-    transition: background 0.2s;
+    margin-top: 10px;
 }
 
-.discord-link:hover {
-    background: #0088cc;
-}
-
-/* Scrollbar */
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--background-tertiary);
+    background: var(--background-secondary);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--background-accent);
+    background: var(--interactive-active);
     border-radius: var(--border-radius);
 }
 
 /* Responsive Design */
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
     .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
+        width: 200px;
     }
 
-    .content {
-        margin-left: 0;
-        padding: 10px;
-    }
-
-    .members-list, .allies-list {
-        justify-content: center;
+    .member {
+        width: 150px;
     }
 }
