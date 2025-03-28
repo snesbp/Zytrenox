@@ -1,7 +1,5 @@
-/* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@300;400;700&family=Righteous&display=swap');
 
-/* Theme Variables */
 :root {
     --background-primary: #36393f;
     --background-secondary: #2f3136;
@@ -19,7 +17,6 @@
     --font-header: 'Righteous', sans-serif;
 }
 
-/* Apply Discord-Like Dark Theme */
 body {
     background-color: var(--background-primary);
     color: var(--text-normal);
@@ -30,7 +27,6 @@ body {
     height: 100vh;
 }
 
-/* Sidebar */
 .sidebar {
     width: 250px;
     background-color: var(--background-secondary);
@@ -68,14 +64,12 @@ body {
     background-color: var(--interactive-hover);
 }
 
-/* Main Content */
 .content {
     flex: 1;
     padding: 20px;
     overflow-y: auto;
 }
 
-/* Members List */
 .members-list {
     display: flex;
     flex-wrap: wrap;
@@ -100,7 +94,6 @@ body {
     margin-top: 10px;
 }
 
-/* Custom Scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -114,7 +107,6 @@ body {
     border-radius: var(--border-radius);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .sidebar {
         width: 200px;
