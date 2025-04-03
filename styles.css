@@ -36,7 +36,6 @@ body {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    transition: all 0.3s ease-in-out;
     box-shadow: 2px 0 10px var(--shadow-dark);
 }
 
@@ -44,7 +43,6 @@ body {
     font-family: var(--font-header);
     color: var(--text-link);
     text-align: center;
-    animation: fadeIn 0.5s ease-in-out;
     font-size: 2rem;
     margin-bottom: 30px;
 }
@@ -56,7 +54,6 @@ body {
 
 .sidebar ul li {
     margin: 15px 0;
-    animation: slideIn 0.4s ease-in-out;
 }
 
 .sidebar ul li a {
@@ -66,19 +63,12 @@ body {
     padding: 12px;
     display: block;
     border-radius: var(--border-radius);
-    transition: background 0.2s ease-in-out, transform 0.1s;
-}
-
-.sidebar ul li a:hover {
-    background-color: var(--interactive-hover);
-    transform: scale(1.05);
 }
 
 .content {
     flex: 1;
     padding: 20px;
     overflow-y: auto;
-    animation: fadeIn 0.5s ease-in-out;
 }
 
 .members-list {
@@ -95,13 +85,7 @@ body {
     padding: 20px;
     text-align: center;
     width: 220px;
-    transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
     box-shadow: 0 4px 10px var(--shadow-light);
-}
-
-.member:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 20px var(--shadow-dark);
 }
 
 .member img {
@@ -124,18 +108,8 @@ body {
     border-radius: var(--border-radius);
     border: none;
     cursor: pointer;
-    transition: background 0.3s ease-in-out, transform 0.2s;
     font-weight: 600;
     text-align: center;
-}
-
-.btn:hover {
-    background-color: #007acc;
-    transform: scale(1.05);
-}
-
-.btn:active {
-    transform: scale(0.95);
 }
 
 .glow-btn {
@@ -147,17 +121,7 @@ body {
     border-radius: var(--border-radius);
     border: none;
     cursor: pointer;
-    transition: box-shadow 0.3s ease-in-out, transform 0.2s;
     box-shadow: 0 0 12px rgba(0, 153, 255, 0.6);
-}
-
-.glow-btn:hover {
-    box-shadow: 0 0 30px rgba(0, 153, 255, 0.9);
-    transform: scale(1.05);
-}
-
-.glow-btn:active {
-    transform: scale(0.95);
 }
 
 .message {
@@ -165,9 +129,6 @@ body {
     padding: 12px;
     border-radius: var(--border-radius);
     margin: 10px 0;
-    opacity: 0;
-    transform: translateY(15px);
-    animation: popIn 0.3s forwards ease-in-out;
     box-shadow: 0 2px 8px var(--shadow-light);
 }
 
@@ -193,7 +154,6 @@ input[type="text"], input[type="password"], input[type="email"], select, textare
     border-radius: var(--border-radius);
     width: 100%;
     margin-top: 10px;
-    transition: background-color 0.2s ease-in-out;
 }
 
 input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, select:focus, textarea:focus {
@@ -219,13 +179,6 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
     bottom: 125%;
     left: 50%;
     margin-left: -60px;
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.tooltip:hover .tooltiptext {
-    visibility: visible;
-    opacity: 1;
 }
 
 @media (max-width: 768px) {
@@ -240,36 +193,5 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
     .btn, .glow-btn {
         font-size: 14px;
         padding: 10px 20px;
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes slideIn {
-    from {
-        transform: translateX(-20px);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes popIn {
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
     }
 }
