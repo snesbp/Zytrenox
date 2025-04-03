@@ -10,7 +10,6 @@
     --text-muted: #72767d;
     --text-link: #00b0f4;
     --interactive-active: #0099ff;
-    --interactive-hover: rgba(0, 0, 0, 0.534);
     --border-radius: 10px;
     --font-ui: 'Poppins', sans-serif;
     --font-body: 'Roboto', sans-serif;
@@ -179,6 +178,7 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
     bottom: 125%;
     left: 50%;
     margin-left: -60px;
+    opacity: 0;
 }
 
 @media (max-width: 768px) {
